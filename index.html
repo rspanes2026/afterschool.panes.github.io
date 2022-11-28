@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+        
+		<title> After School </title>
+		
+		<style>
+			body {
+				background-color: #594347;
+                min-width: inherit;
+				max-width: inherit;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.main {
+				font-family: 'Oleo Script', cursive;
+				color: #F2BBC9;
+				text-align: center;
+				font-size: 60px;
+				margin-bottom: 2px;
+                margin-top: 10px;
+			}
+			
+			.motto {
+				font-family: 'Lobster Two', cursive;
+				color: #F2B3CA;
+				text-align: center;
+				font-size: 25px;
+				margin-top: 2px;
+			}
+			
+			nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:#A67C87;
+                height: 56px;
+            }
+
+            nav ul li {
+                float: left;
+                font-family: 'Lobster Two', cursive;
+            }
+
+            nav ul li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            nav ul li a:hover{
+                background-color: #F2DCE0;
+                color: #594347;
+            }
+            
+            nav ul li a.active{
+                background-color: #F2DCE0;
+                color: #594347;
+            }
+			
+            .content {
+              padding: 16px;
+            }
+
+            .sticky {
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+
+            .sticky + .content {
+              padding-top: 60px;
+            }
+            
+            .header2 {
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("https://images.pexels.com/photos/377903/pexels-photo-377903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+                width: auto;
+                height: auto;
+                background-position: 30% 30%;
+                background-size: cover;
+                padding-right: 30px;
+                padding-top: 65px;
+            }
+            
+            .header2 h1 {
+                text-align: right;
+                font-size: 100px;
+                color: #F2EAE4;
+                font-family: 'Lora', serif;
+            }
+            
+            .os {
+				font-family: 'Oleo Script', cursive;
+				color: #F2BBC9;
+				text-align: center;
+				font-size: 60px;
+				margin-bottom: 2px;
+                margin-top: 0px;
+			}
+            .slideshow-container {
+                max-width: 550px;
+                position: relative;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: auto;
+                background-color: #F2E4E4;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: #593D3B;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+            
+            .prev:hover, .next:hover {
+              background-color: #A66D6D;
+            }
+			
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                margin-top: 4px;
+                position: absolute;
+                max-width: 550px;
+                text-align: center;
+                color: #593D3B;
+                background-color: #D9A3A3;
+                font-family: 'Nunito', sans-serif;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .special {
+                color: #f2f2f2;
+                font-size: 30px;
+                top: 0;
+                font-family: 'Lobster Two', cursive;
+                text-align: center;
+                margin-bottom: 0px;
+                color: #59484F;
+            }
+
+            .dot {
+              cursor: pointer;
+              height: 15px;
+              width: 15px;
+              margin: 0 2px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+              background-color: #717171;
+            }
+
+            @keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            @media only screen and (max-width: 300px) {
+              .prev, .next,.text {font-size: 11px}
+            }
+            
+            .ft {
+                margin-left: 100px;
+                border: 0px;
+                
+            }
+            
+            .as {
+				font-family: 'Oleo Script', cursive;
+				color: #F2BBC9;
+				text-align: center;
+                font-size: 20px;
+                margin: auto;
+			}
+
+      footer {
+				background-color: #D97E8E;
+				margin: 50px 0 0 0;
+				padding: 15px 15px 15px 15px;
+			}
+			
+			footer h2 {
+				font-family: 'Lobster Two', cursive;
+				color: #594848;
+                text-align: center;
+			}
+			
+			footer p {
+				font-family: 'Nunito', sans-serif;
+				color: #F2DEDC;
+                margin: 1px 100px 1px 100px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header>
+		<h1 class='main'> After School </h1>
+		<p class='motto'> Can't wait 'till it's After School </p>
+		</header>
+		<nav id="hea">
+            <ul>
+                <li class="as"><a href="index.html">After School</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+				<li><a href="https://youtu.be/w22qckVMg6k"> Order Now </a></li>
+              </ul>
+        </nav>
+		
+        <div>
+        <div class="header2">
+            <h1 style="margin: 0px;"> "DON'T DRIFT </h1>
+            <h1 style="margin: 0px;"> TOO FAR"</h1>
+            <h1 style="margin: 0px;"> THEY SAID</h1>
+        </div>
+        
+        <div style="background-color: #A67C87;">
+            <h1 class='os'> Our Specials </h1>
+            <p class='motto'> Favored by our dear customers for the past 2022 years</p>
+        </div>
+            <div class="slideshow-container">
+            <div class="mySlides fade">
+              <h1 class="special">Field Trip</h1>
+              <video class="ft" width="350" height="479" controls autoplay loop>
+                  <source src="fieldtrip.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+                </video>
+              <p class="text">Taste the sweet and fresh coffee that will for sure take you on a Field Trip where your creative imagination is the final destination. </p>
+            </div>
+
+            <div class="mySlides fade">
+              <h1 class="special">Glued</h1>
+              <video class="ft" width="350" height="479" controls autoplay loop>
+                  <source src="glued.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+                </video>
+              <p class="text">With the delightful taste, and creamy texture, it will surely glue your mouth to the spoon with every bite.</p>
+            </div>
+
+            <div class="mySlides fade">
+              <h1 class="special"> Notebook </h1>
+              <video class="ft" width="350" height="479" controls autoplay loop muted>
+                  <source src="notebook.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+                </video>
+              <p class="text">For our dear student customers, this coffee is for you. Just one sip and you are fully energized. Now grab a pen and notebook and "Write this down baby".</p>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+            <footer>
+              <h2> Use code "PackItBoxItFlipItTopIt" to get a 15% discount</h2> 
+              <p>Visit us at Lot 314, Block 1592, 65th Subdivision, Hurricane, Biringan.</p>
+              <p>Want to work with us? email us at afterschool@gmail.com or dial us at 161803398.</p>
+              </footer>
+
+            </div>
+
+            <script>
+                
+                window.onscroll = function() {myFunction()};
+
+                var hea = document.getElementById("hea");
+                var sticky = hea.offsetTop;
+
+                function myFunction() {
+                  if (window.pageYOffset >= sticky) {
+                    hea.classList.add("sticky")
+                  } else {
+                    hea.classList.remove("sticky");
+                  }
+                }
+
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+            </script>
+    </body>
+</html>
